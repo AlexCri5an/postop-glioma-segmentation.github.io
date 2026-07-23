@@ -1,96 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Post-Operative Glioma Segmentation via Loss Stabilization, Normalization and Subspace Attention">
+  <meta name="keywords" content="Glioma, Segmentation, Post-Operative, SwinUNETR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Post-Operative Glioma Segmentation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f8fafc;
-    }
-    .card {
-      max-width: 720px;
-      width: 100%;
-      margin: 2rem;
-      padding: 3rem 2.5rem;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.09);
-      text-align: center;
-    }
-    .paper-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #1e293b;
-      line-height: 1.3;
-      margin-bottom: 1.25rem;
-    }
-    .authors {
-      font-size: 1rem;
-      color: #475569;
-      margin-bottom: 0.4rem;
-    }
-    .authors a { color: #4f46e5; text-decoration: none; font-weight: 600; }
-    .authors a:hover { text-decoration: underline; }
-    .affiliation {
-      font-size: 0.88rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-    }
-    .links { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.55rem 1.3rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      background: #1e293b;
-      color: #fff;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(30,41,59,0.25); color: #fff; }
-  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
 </head>
 <body>
-  <div class="card">
-<h1 class="paper-title">
-      Post-Operative Glioma Segmentation via Loss Stabilization,
-      Normalization and Subspace Attention
-    </h1>
-    <p class="authors">
-      <a href="https://github.com/AlexCri5an" target="_blank">Alexandru Crișan</a>
-      &nbsp;&amp;&nbsp;
-      Diana Borza
-    </p>
-    <p class="affiliation">Babeș-Bolyai University, Cluj-Napoca, Romania</p>
-    <div class="links">
-      <a class="btn" href="static/paper.pdf" target="_blank">
-        <i class="fas fa-file-pdf"></i> Paper
-      </a>
-      <a class="btn" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
-        <i class="ai ai-arxiv"></i> arXiv
-      </a>
-      <a class="btn" href="https://github.com/AlexCri5an/postop-glioma-segmentation" target="_blank">
-        <i class="fab fa-github"></i> Code
-      </a>
-      <a class="btn" href="https://doi.org/XXXX/dataset" target="_blank">
-        <i class="fas fa-database"></i> Data
-      </a>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Post-Operative Glioma Segmentation via Loss Stabilization, Normalization and Subspace Attention</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/crisan-alexandru/" target="_blank">Alexandru Crișan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=0mxqCrAAAAAJ&hl=en" target="_blank">Diana Borza</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Babeș-Bolyai University, Cluj-Napoca, Romania</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <span class="link-block">
+                <a href="./static/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/saca.png" alt="SACA Module Diagram" style="width: 100%; border-radius: 10px;"/>
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+        Overview of the <strong>Subspace-Aware Class Attention (SACA)</strong> module, partitioned into latent subspaces for class-conditioned attention.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Tracking residual tumor after surgery is essential for catching recurrence early, but automating post-operative glioma segmentation remains a difficult task. Although transformer-based architectures, such as SwinUNETR, achieved impressive results, few studies test how well they generalize across clinical protocols.
+          </p>
+          <p>
+            In this paper, we conduct an ablation study on the MU-GLIOMA-POST and UCSF-ALPTDG datasets and show that the standard Generalized Dice Loss (GDL) is unstable under domain shift: the Whole Lesion (WL) Dice drops from 0.88 on the internal validation set to 0.73 on the external UCSF test set. To address this, we pair brain-masked percentile normalization with voxel-level contrastive learning.
+          </p>
+          <p>
+            We also propose a Subspace-Aware Class Attention (SACA) module that re-calibrates the bottleneck features and raises Enhancing Tumor (ET) sensitivity by 8% (9.1% relative improvement) on internal validation. Ensembling these refinements with nnU-Net brings every stable configuration to a WL Dice of 0.94, and the SACA variant ensemble achieves the best boundary error (HD95) of 2.92 mm on MU-GLIOMA-POST.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">The Challenge of Post-Operative Anatomy</h2>
+        
+        <div class="columns is-centered mt-4">
+          <div class="column is-5 has-text-centered">
+            <h4 class="title is-5">Pre-Operative</h4>
+            <img src="./static/images/pre_op.png" alt="Pre-Operative Anatomy" style="border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 75%;" />
+          </div>
+          <div class="column is-5 has-text-centered">
+            <h4 class="title is-5">Post-Operative</h4>
+            <img src="./static/images/post_op.png" alt="Post-Operative Anatomy" style="border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 75%;" />
+          </div>
+        </div>
+
+        <div class="content has-text-justified mt-4">
+          <p>
+            Unlike pre-operative imaging, where the tumor usually presents as a continuous mass, post-operative MRI scans are significantly more complex. Surgical intervention radically alters the brain anatomy by removing large portions of the tumor, which are replaced by a fluid-filled <strong>Resection Cavity (RC)</strong>. 
+          </p>
+          <p>
+            Furthermore, the surgical site often exhibits non-specific changes such as blood products, surgical debris, and inflammation. These artifacts can easily mimic the appearance of residual <strong>Enhancing Tumor (ET)</strong> on T1-weighted contrast-enhanced (T1c) sequences, while post-surgical edema can be mistaken for <strong>Surrounding Non-enhancing FLAIR Hyperintensity (SNFH)</strong>. This dramatic anatomical shift makes automated segmentation of residual tumors a highly challenging task, prone to both false positives and missed recurrences if the model is not properly calibrated.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <style>
+            .qualitative-table { width: 100%; border-collapse: collapse; }
+            .qualitative-table td, .qualitative-table th { padding: 4px !important; text-align: center !important; vertical-align: middle !important; border: none !important; }
+            .qualitative-table img { width: 100%; height: auto; display: block; border-radius: 4px; margin: 0 auto; }
+            .qualitative-table .case-label { font-weight: bold; font-size: 1rem; padding-right: 15px !important; white-space: nowrap; }
+            .qualitative-table th { font-weight: 600; font-size: 0.9rem; padding-bottom: 10px !important; }
+          </style>
+          <table class="qualitative-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>T1c</th>
+                <th>GT</th>
+                <th>Baseline</th>
+                <th>Norm Variant</th>
+                <th>SACA Variant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="case-label"><span>Case 1</span></td>
+                <td><img src="./static/images/case1_t1c.png" alt="Case 1 T1c" /></td>
+                <td><img src="./static/images/case1_gt.png" alt="Case 1 GT" /></td>
+                <td><img src="./static/images/case1_baseline.png" alt="Case 1 Baseline" /></td>
+                <td><img src="./static/images/case1_normalization.png" alt="Case 1 Normalization" /></td>
+                <td><img src="./static/images/case1_maca.png" alt="Case 1 SACA" /></td>
+              </tr>
+              <tr>
+                <td class="case-label"><span>Case 2</span></td>
+                <td><img src="./static/images/case2_t1c.png" alt="Case 2 T1c" /></td>
+                <td><img src="./static/images/case2_gt.png" alt="Case 2 GT" /></td>
+                <td><img src="./static/images/case2_baseline.png" alt="Case 2 Baseline" /></td>
+                <td><img src="./static/images/case2_normalization.png" alt="Case 2 Normalization" /></td>
+                <td><img src="./static/images/case2_maca.png" alt="Case 2 SACA" /></td>
+              </tr>
+              <tr>
+                <td class="case-label"><span>Case 3</span></td>
+                <td><img src="./static/images/case3_t1c.png" alt="Case 3 T1c" /></td>
+                <td><img src="./static/images/case3_gt.png" alt="Case 3 GT" /></td>
+                <td><img src="./static/images/case3_baseline.png" alt="Case 3 Baseline" /></td>
+                <td><img src="./static/images/case3_normalization.png" alt="Case 3 Normalization" /></td>
+                <td><img src="./static/images/case3_maca.png" alt="Case 3 SACA" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="is-size-6" style="margin-top: 15px; color: #4a4a4a;">
+            <strong>Qualitative results.</strong> Columns (left to right): T1c axial slice, Ground Truth (GT), <em>Baseline</em>, <em>Norm Variant</em>, and <em>SACA Variant</em>. 
+            Segmentation labels: ET (blue), TC (yellow), RC (green), and SNFH (red). 
+            Case 1: WL Dice > 0.95; Case 2: WL Dice ≈ 0.80; Case 3: morphology featuring a large resection cavity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{crisan2026postop,
+  title     = {Post-Operative Glioma Segmentation via Loss Stabilization, Normalization and Subspace Attention},
+  author    = {Alexandru Crișan and Diana Borza},
+  journal   = {arXiv preprint},
+  note      = {Under review at ICANN 2026},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website's template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
