@@ -72,7 +72,7 @@
                   </a>
               </span>
 
-              <div class="dropdown is-hoverable" style="margin: 0 4px;">
+              <div class="dropdown is-hoverable" style="margin: 0 4px;" onclick="this.classList.toggle('is-active')">
                 <div class="dropdown-trigger">
                   <a class="external-link button is-normal is-rounded is-dark" style="margin-top: 5px; margin-bottom: 5px;">
                     <span class="icon">
@@ -175,50 +175,52 @@
         <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-justified">
           <style>
-            .qualitative-table { width: 100%; border-collapse: collapse; }
+            .qualitative-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
             .qualitative-table td, .qualitative-table th { padding: 4px !important; text-align: center !important; vertical-align: middle !important; border: none !important; }
-            .qualitative-table img { width: 100%; height: auto; display: block; border-radius: 4px; margin: 0 auto; }
-            .qualitative-table .case-label { font-weight: bold; font-size: 1rem; padding-right: 15px !important; white-space: nowrap; }
+            .qualitative-table img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 4px; margin: 0 auto; }
+            .qualitative-table .case-label { font-weight: bold; font-size: 1rem; padding-right: 10px !important; white-space: nowrap; width: 60px; }
             .qualitative-table th { font-weight: 600; font-size: 0.9rem; padding-bottom: 10px !important; }
           </style>
-          <table class="qualitative-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>T1c</th>
-                <th>GT</th>
-                <th>Baseline</th>
-                <th>Norm Variant</th>
-                <th>SACA Variant</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="case-label"><span>Case 1</span></td>
-                <td><img src="./static/images/case1_t1c.png" alt="Case 1 T1c" /></td>
-                <td><img src="./static/images/case1_gt.png" alt="Case 1 GT" /></td>
-                <td><img src="./static/images/case1_baseline.png" alt="Case 1 Baseline" /></td>
-                <td><img src="./static/images/case1_normalization.png" alt="Case 1 Normalization" /></td>
-                <td><img src="./static/images/case1_maca.png" alt="Case 1 SACA" /></td>
-              </tr>
-              <tr>
-                <td class="case-label"><span>Case 2</span></td>
-                <td><img src="./static/images/case2_t1c.png" alt="Case 2 T1c" /></td>
-                <td><img src="./static/images/case2_gt.png" alt="Case 2 GT" /></td>
-                <td><img src="./static/images/case2_baseline.png" alt="Case 2 Baseline" /></td>
-                <td><img src="./static/images/case2_normalization.png" alt="Case 2 Normalization" /></td>
-                <td><img src="./static/images/case2_maca.png" alt="Case 2 SACA" /></td>
-              </tr>
-              <tr>
-                <td class="case-label"><span>Case 3</span></td>
-                <td><img src="./static/images/case3_t1c.png" alt="Case 3 T1c" /></td>
-                <td><img src="./static/images/case3_gt.png" alt="Case 3 GT" /></td>
-                <td><img src="./static/images/case3_baseline.png" alt="Case 3 Baseline" /></td>
-                <td><img src="./static/images/case3_normalization.png" alt="Case 3 Normalization" /></td>
-                <td><img src="./static/images/case3_maca.png" alt="Case 3 SACA" /></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table class="qualitative-table" style="min-width: 600px;">
+              <thead>
+                <tr>
+                  <th class="case-label"></th>
+                  <th>T1c</th>
+                  <th>GT</th>
+                  <th>Baseline</th>
+                  <th>Norm Variant</th>
+                  <th>SACA Variant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="case-label"><span>Case 1</span></td>
+                  <td><img src="./static/images/case1_t1c.png" alt="Case 1 T1c" /></td>
+                  <td><img src="./static/images/case1_gt.png" alt="Case 1 GT" /></td>
+                  <td><img src="./static/images/case1_baseline.png" alt="Case 1 Baseline" /></td>
+                  <td><img src="./static/images/case1_normalization.png" alt="Case 1 Normalization" /></td>
+                  <td><img src="./static/images/case1_maca.png" alt="Case 1 SACA" /></td>
+                </tr>
+                <tr>
+                  <td class="case-label"><span>Case 2</span></td>
+                  <td><img src="./static/images/case2_t1c.png" alt="Case 2 T1c" /></td>
+                  <td><img src="./static/images/case2_gt.png" alt="Case 2 GT" /></td>
+                  <td><img src="./static/images/case2_baseline.png" alt="Case 2 Baseline" /></td>
+                  <td><img src="./static/images/case2_normalization.png" alt="Case 2 Normalization" /></td>
+                  <td><img src="./static/images/case2_maca.png" alt="Case 2 SACA" /></td>
+                </tr>
+                <tr>
+                  <td class="case-label"><span>Case 3</span></td>
+                  <td><img src="./static/images/case3_t1c.png" alt="Case 3 T1c" /></td>
+                  <td><img src="./static/images/case3_gt.png" alt="Case 3 GT" /></td>
+                  <td><img src="./static/images/case3_baseline.png" alt="Case 3 Baseline" /></td>
+                  <td><img src="./static/images/case3_normalization.png" alt="Case 3 Normalization" /></td>
+                  <td><img src="./static/images/case3_maca.png" alt="Case 3 SACA" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <p class="is-size-6" style="margin-top: 15px; color: #4a4a4a;">
             <strong>Qualitative results.</strong> Columns (left to right): T1c axial slice, Ground Truth (GT), <em>Baseline</em>, <em>Norm Variant</em>, and <em>SACA Variant</em>. 
             Segmentation labels: ET (blue), TC (yellow), RC (green), and SNFH (red). 
